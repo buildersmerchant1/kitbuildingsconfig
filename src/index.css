@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type="checkbox"]:focus {
+  --tw-ring-color: #02008d;
+}
+
+input[type="checkbox"] {
+  @apply text-primary rounded-sm cursor-pointer;
+}
+
+button[disabled] {
+  @apply cursor-not-allowed bg-slate-300 border-slate-300 text-slate-900 hover:bg-slate-300 hover:border-slate-300 hover:text-slate-900;
+}
+
+.canvas {
+  @apply block w-full h-full;
+}
+
+.canvas:focus,
+.canvas:hover,
+.canvas:active {
+  @apply outline-none border-0;
+}
+
+.quote-button {
+  @apply fixed rounded-md inset-x-0 w-max mx-auto flex items-center justify-center py-3 px-5 bg-primary text-white font-bold uppercase cursor-pointer border-2 border-primary hover:bg-white hover:text-primary transition;
+}
+
+.modal-content {
+  @apply relative flex flex-col max-h-full mx-4 p-5 rounded-md bg-white text-primary;
+}
+
+.animate-top {
+  position: absolute;
+  animation-fill-mode: forwards;
+  animation-duration: 500ms;
+
+  @apply box-content;
+}
+
+.animate-top-large {
+  top: 172px;
+  animation-name: topLarge;
+}
+
+.animate-top-small {
+  top: 112px;
+  animation-name: topSmall;
+}
+
+@keyframes topSmall {
+  from {
+    top: 90px;
+    opacity: 0;
+  }
+
+  to {
+    top: 112px;
+    opacity: 1;
+  }
+}
+
+@keyframes topLarge {
+  from {
+    top: 150px;
+    opacity: 0;
+  }
+
+  to {
+    top: 172px;
+    opacity: 1;
+  }
+}
